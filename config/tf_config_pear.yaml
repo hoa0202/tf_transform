@@ -1,0 +1,74 @@
+# 발행 주기 설정 (Hz)
+publish_rate: 100
+
+# 선택적 타임스탬프 참조 토픽 설정
+timestamp_topic:
+  name: "/livox/lidar"
+  type: "sensor_msgs/msg/PointCloud2"
+
+transforms:
+  - frame_id: "sensor_frame"
+    child_frame_id: "livox_frame"
+    is_static: true  # static tf로 설정
+    timestamp_topic:
+      name: "/livox/lidar"
+      type: "sensor_msgs/msg/PointCloud2"
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.195
+    rotation:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0
+
+  - frame_id: "sensor_frame"
+    child_frame_id: "zed_camera_link"
+    is_static: true  # static tf로 설정
+    timestamp_topic:
+      name: "/zed/zed_node/rgb/image_rect_color"
+      type: "sensor_msgs/msg/Image"
+    translation:
+      x: 0.055
+      y: 0.0
+      z: 0.035
+    rotation:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0 
+    
+  - frame_id: "sensor_frame"
+    child_frame_id: "os_sensor"
+    is_static: true  # static tf로 설정
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.12
+    rotation:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0 
+
+  - frame_id: "base_link"
+    child_frame_id: "gps"
+    is_static: true  # static tf로 설정
+    translation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    rotation:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0 
+
+  - frame_id: "base_link"
+    child_frame_id: "sensor_frame"
+    is_static: true  # static tf로 설정
+    translation:
+      x: -0.95
+      y: 0.0
+      z: 1.4
+    rotation:
+      roll: 0.0
+      pitch: 0.0
+      yaw: 0.0 

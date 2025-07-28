@@ -9,13 +9,14 @@ timestamp_topic:
 transforms:
   - frame_id: "base_link"
     child_frame_id: "livox_frame"
+    is_static: true  # static tf로 설정
     timestamp_topic:
       name: "/livox/lidar"
       type: "sensor_msgs/msg/PointCloud2"
     translation:
-      x: 0.21
+      x: 0.20
       y: 0.0
-      z: 0.71
+      z: 0.76
     rotation:
       roll: 0.0
       pitch: 0.0
@@ -23,14 +24,51 @@ transforms:
 
   - frame_id: "base_link"
     child_frame_id: "zed_camera_link"
+    is_static: true  # static tf로 설정
     timestamp_topic:
       name: "/zed/zed_node/rgb/image_rect_color"
       type: "sensor_msgs/msg/Image"
     translation:
-      x: 0.25
+      x: 0.24
       y: 0.0
-      z: 0.58
+      z: 0.68
     rotation:
       roll: 0.0
       pitch: 0.0
       yaw: 0.0 
+  
+  # - frame_id: "base_link"
+  #   child_frame_id: "imu_link"
+  #   is_static: true  # static tf로 설정
+  #   translation:
+  #     x: 0.0
+  #     y: 0.0
+  #     z: 0.515
+  #   rotation:
+  #     roll: 0.0
+  #     pitch: 0.0
+  #     yaw: 0.0 
+    
+  # - frame_id: "base_link"
+  #   child_frame_id: "os_sensor"
+  #   is_static: true  # static tf로 설정
+  #   translation:
+  #     x: 0.21
+  #     y: 0.0
+  #     z: 0.72
+  #   rotation:
+  #     roll: 0.0
+  #     pitch: 0.0
+  #     yaw: 0.0 
+
+  # - frame_id: "base_link"
+  #   child_frame_id: "gps"
+  #   is_static: true  # static tf로 설정
+  #   translation:
+  #     x: 0.0
+  #     y: 0.0
+  #     z: 0.76
+  #   rotation:
+  #     roll: 0.0
+  #     pitch: 0.0
+  #     yaw: 0.0 
